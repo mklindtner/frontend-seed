@@ -19,7 +19,9 @@ class App extends Component {
 
   async componentDidMount() {
     await DataFacade.getData();
-    this.setState({ data: testData }); //DataFacade.data[0].results
+    this.setState({ data: testData }); 
+    //DataFacade.data[0].results if array in array, ex. config.URL_swapi <-- remember to change id's in the tableRender see NB!
+    //DataFacade.data to get data from facade
   }
 
   SetUser = (userInfo) => {
@@ -28,7 +30,7 @@ class App extends Component {
 
   Logout = () => {
     this.setState({ user: null });
-    this.setState({ redirect: "/" }); //should be used
+    this.setState({ redirect: "/" }); 
   }
 
   render() {   

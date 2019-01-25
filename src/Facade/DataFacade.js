@@ -1,8 +1,6 @@
 import makeOptions from './Fetch';
-
-//const URL = "http://localhost:8081/api/webdata/swapi/2/planets"; //remember http
-const URL = "http://localhost:8081/api/webdata/swapi/planets";
-const URI = "";
+import Config from '.././Config'
+const URI = ""; //add URI here
 
 class DataFacade {
     constructor() {
@@ -17,16 +15,15 @@ class DataFacade {
         this._data = data;
     }    
 
-    //use await on each crud on the component that uses these
     //recommended: ComponenDidMount();
     getData = async () => {
-        await fetch(URL)
+        await fetch(Config.URL_anyObject)
             .then((header) => header.json())
             .then(body => { this._data = body });
     }
 
     addData = (body) => {
-        return fetch(URL, makeOptions("POST", body));
+        return fetch(Config.URL_anyObject, makeOptions("POST", body));
     }
 
     editData = (body) => {

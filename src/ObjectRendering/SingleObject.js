@@ -10,10 +10,6 @@ export default class SingleObject extends Component {
         });
     }
 
-    //unable to call this, why?
-    ComponentDidMount() {
-    }
-
     findObject = () => {
         this.props.data.forEach((obj) => {
             if (obj.name == this.props.match.params.objectId && !Object.keys(this.state.object).length) //checks param and if object is empty
@@ -94,7 +90,7 @@ export default class SingleObject extends Component {
     }
 
     render() {
-        this.findObject(); //this should be placed elsewhere
+        this.findObject(); //this should be placed elsewhere, but I was unable to use it in ComponentDidMount 
         if (!this.state.object)
             return (<div>object Not Found</div>);
         return (

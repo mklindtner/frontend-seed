@@ -43,7 +43,7 @@ export default class TableRender extends Component {
         );
     }
 
-    //NB! singleRow.PRIMARYKEY REMEMBERUUU
+    //NB! singleRow.PrimaryKey 
     RenderSingleRow = (singleRow) => {
         const values = Object.values(singleRow);
         const history = this.props.history;
@@ -101,12 +101,3 @@ export default class TableRender extends Component {
         );
     }
 }
-
-
-
-/*
-
-add filter
-
-
-*/
